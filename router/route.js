@@ -8,7 +8,7 @@ import { genhashpassword } from "./login.router.js";
 const router = express.Router()
 dotenv.config()
 
-router.post("/forget-password", async (req, res) => {
+router.post("/pass/forget-password", async (req, res) => {
     const { email } = req.body;
 
     const otp = randomstring.generate({
@@ -43,7 +43,7 @@ router.post("/forget-password", async (req, res) => {
 
 
 // Verify OTP
-router.post('/verifyotp', async (req, res) => {
+router.post('/pass/verifyotp', async (req, res) => {
     const { email, otp, password } = req.body;
 
     try {

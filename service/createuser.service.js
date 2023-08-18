@@ -10,7 +10,7 @@ export async function hashpass(email, hashpassword) {
         });
 }
 
-export async function getuserbyname(email, hashpassword) {
+export async function getuserbyname(email) {
     return await client
         .db("ebay")
         .collection("signup")
