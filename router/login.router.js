@@ -13,8 +13,8 @@ export async function genhashpassword(password) {
 }
 
 router.post("/login",async function (request, response) {
-    const {username,password}=request.body;
-    const userfromdb=await getuserbyname(username)
+    const {email,password}=request.body;
+    const userfromdb=await getuserbyname(email)
     console.log(userfromdb);
     if(!userfromdb){
         response.status(400).send({message:"invalid credential"})
@@ -34,9 +34,9 @@ router.post("/login",async function (request, response) {
   });
   
 router.post("/signup", async function (request, response) {
-    const { username, password } = request.body;
+    const { email, password } = request.body;
 
-    const userfromdb = await getuserbyname(username)
+    const userfromdb = await getuserbyname(email)
 
     // console.log(userfromdb);
 
@@ -52,7 +52,7 @@ router.post("/signup", async function (request, response) {
         // console.log(data);
 
         // db.userid.insertmany(data)
-        const result = await hashpass(username, hashpassword)
+        const result = await hashpass(email, hashpassword)
         response.send(result);
     }
 

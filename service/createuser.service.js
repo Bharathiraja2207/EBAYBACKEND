@@ -1,11 +1,11 @@
 import { client } from '../index.js';
 
-export async function hashpass(username, hashpassword) {
+export async function hashpass(email, hashpassword) {
     return await client
         .db("ebay")
         .collection("signup")
         .insertOne({
-            username: username,
+            email: email,
             password: hashpassword
         });
 }
@@ -15,6 +15,6 @@ export async function getuserbyname(username, hashpassword) {
         .db("ebay")
         .collection("signup")
         .findOne({
-            username: username
+            email: email
         });
 }
