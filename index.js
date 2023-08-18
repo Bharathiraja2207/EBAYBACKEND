@@ -21,9 +21,7 @@ await client.connect();
 console.log('mongo is connected!!');
 
 
-app.use(cors({
-    origin: "*"
-}))
+app.use(cors ())
 app.use(express.json())
 
 // Use bodyParser middleware to parse JSON in request body
