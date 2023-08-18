@@ -13,7 +13,7 @@ router.post("/dashboard", async function (request, response) {
     response.send(data)
 })
 
-router.post("/dashboard", async function (request, response) {
+router.post("/one/dashboard", async function (request, response) {
     const result = request.body
     const data = await client
         .db("ebay")
@@ -49,7 +49,7 @@ router.post("/cars", async function (request, response) {
     response.send(data)
 })
 
-router.post("/cars", async function (request, response) {
+router.post("/one/cars", async function (request, response) {
     const result = request.body
     const data = await client
         .db("ebay")
@@ -84,7 +84,7 @@ router.post("/bikes", async function (request, response) {
     response.send(data)
 })
 
-router.post("/bikes", async function (request, response) {
+router.post("/one/bikes", async function (request, response) {
     const result = request.body
     const data = await client
         .db("ebay")
@@ -119,7 +119,7 @@ router.post("/phones", async function (request, response) {
     response.send(data)
 })
 
-router.post("/phones", async function (request, response) {
+router.post("/one/phones", async function (request, response) {
     const result = request.body
     const data = await client
         .db("ebay")
@@ -153,7 +153,7 @@ router.post("/watches", async function (request, response) {
     response.send(data)
 })
 
-router.post("/watches", async function (request, response) {
+router.post("/one/watches", async function (request, response) {
     const result = request.body
     const data = await client
         .db("ebay")
@@ -188,7 +188,7 @@ router.post("/washingMachines", async function (request, response) {
     response.send(data)
 })
 
-router.post("/washingMachines", async function (request, response) {
+router.post("/one/washingMachines", async function (request, response) {
     const result = request.body
     const data = await client
         .db("ebay")
@@ -222,7 +222,7 @@ router.post("/laptops", async function (request, response) {
     response.send(data)
 })
 
-router.post("/laptops", async function (request, response) {
+router.post("/one/laptops", async function (request, response) {
     const result = request.body
     const data = await client
         .db("ebay")
