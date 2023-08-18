@@ -19,7 +19,7 @@ router.post("/forget-password", async (req, res) => {
         .db("ebay")
         .collection("signup")
         .updateOne({
-            username: email
+            email: email
         }, { $set: { otp } })
     try {
         const transporter = nodemailer.createTransport({
@@ -51,7 +51,7 @@ router.post('/verifyotp', async (req, res) => {
         const user = await client
             .db("ebay")
             .collection("signup")
-            .findOne({ username: email })
+            .findOne({ email: email })
         if (!user) {
             return res.status(400).json({ message: 'User does not exist' });
         }
@@ -66,7 +66,7 @@ router.post('/verifyotp', async (req, res) => {
         const users = await client
             .db("ebay")
             .collection("signup")
-            .updateOne({ username: email }, { $set: { password: hashpassword, otp: '' } })
+            .updateOne({ email: email }, { $set: { password: hashpassword, otp: '' } })
 
         res.json({ message: 'Password updated successfully' });
     } catch (error) {
