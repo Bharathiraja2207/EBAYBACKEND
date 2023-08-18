@@ -13,6 +13,15 @@ router.post("/dashboard", async function (request, response) {
     response.send(data)
 })
 
+router.post("/dashboard", async function (request, response) {
+    const result = request.body
+    const data = await client
+        .db("ebay")
+        .collection("dashboard")
+        .insertOne(result)
+    response.send(data)
+})
+
 router.get("/dashboard", async function (request, response) {
     const detail = await client
         .db("ebay")
@@ -40,6 +49,14 @@ router.post("/cars", async function (request, response) {
     response.send(data)
 })
 
+router.post("/cars", async function (request, response) {
+    const result = request.body
+    const data = await client
+        .db("ebay")
+        .collection("cars")
+        .insertOne(result)
+    response.send(data)
+})
 router.get("/cars", async function (request, response) {
     const detail = await client
         .db("ebay")
@@ -64,6 +81,15 @@ router.post("/bikes", async function (request, response) {
         .db("ebay")
         .collection("bikes")
         .insertMany(result)
+    response.send(data)
+})
+
+router.post("/bikes", async function (request, response) {
+    const result = request.body
+    const data = await client
+        .db("ebay")
+        .collection("bikes")
+        .insertOne(result)
     response.send(data)
 })
 
@@ -93,6 +119,15 @@ router.post("/phones", async function (request, response) {
     response.send(data)
 })
 
+router.post("/phones", async function (request, response) {
+    const result = request.body
+    const data = await client
+        .db("ebay")
+        .collection("phones")
+        .insertOne(result)
+    response.send(data)
+})
+
 router.get("/phones", async function (request, response) {
     const detail = await client
         .db("ebay")
@@ -115,6 +150,15 @@ router.post("/watches", async function (request, response) {
         .db("ebay")
         .collection("watches")
         .insertMany(result)
+    response.send(data)
+})
+
+router.post("/watches", async function (request, response) {
+    const result = request.body
+    const data = await client
+        .db("ebay")
+        .collection("watches")
+        .insertOne(result)
     response.send(data)
 })
 
@@ -144,6 +188,15 @@ router.post("/washingMachines", async function (request, response) {
     response.send(data)
 })
 
+router.post("/washingMachines", async function (request, response) {
+    const result = request.body
+    const data = await client
+        .db("ebay")
+        .collection("washingMachines")
+        .insertOne(result)
+    response.send(data)
+})
+
 router.get("/washingMachines", async function (request, response) {
     const detail = await client
         .db("ebay")
@@ -166,6 +219,15 @@ router.post("/laptops", async function (request, response) {
         .db("ebay")
         .collection("laptops")
         .insertMany(result)
+    response.send(data)
+})
+
+router.post("/laptops", async function (request, response) {
+    const result = request.body
+    const data = await client
+        .db("ebay")
+        .collection("laptops")
+        .insertOne(result)
     response.send(data)
 })
 
